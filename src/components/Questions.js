@@ -31,12 +31,13 @@ function Questions(props) {
     }
 
     const isSolved = async () =>{
+        if (localStorage.getItem('token')){
         let solvedProb =await solved();
         let result = false;
         if(solvedProb!==undefined){
             result = await solvedProb.includes(name);
         }
-        setSolve(result)
+        setSolve(result)}
     }
 
     useEffect(() => {
