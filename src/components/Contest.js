@@ -26,7 +26,7 @@ function Contest() {
     <>
     
         <div className='container-fluid shit' style={{height:`300px`,border:`2px`}}>    
-            <div id="carouselExampleIndicators" className="carousel slide">
+            <div id="carouselExampleIndicators" className="carousel slide d-flex">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                     {cont.map((element,index) => {
@@ -35,8 +35,8 @@ function Contest() {
                     )                    
                     })}
                 </div>
-                <div className="carousel-inner"style={{textDecoration:`none`,height:`300px`}}>
-                    <div className="wel carousel-item active text-white" style={{fontSize:`50px`,fontWeight:`normal`}}>
+                <div className="carousel-inner d-flex"style={{textDecoration:`none`,height:`300px`}}>
+                    <div className="wel carousel-item active text-white">
                         <div>
                             Welcome to CP Quest
                         </div>

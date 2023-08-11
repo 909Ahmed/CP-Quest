@@ -19,7 +19,7 @@ function Navbar() {
     <>
         
         <nav className="navbar navbar-dark bg-dark fixed-top">
-            <div className="container-fluid">
+            <div className="what container-fluid">
                 <div className='set'>
 
 
@@ -49,11 +49,11 @@ function Navbar() {
 
 
                 
-                {location.pathname.includes('problems') && <div>
-                    <button type="button" className="navbar-toggler bg-light text-dark mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                {location.pathname.includes('problems') && <div className='specify'>
+                    <button type="button" className="navbar-toggler bg-light text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Range
                     </button>
-                    <button className="navbar-toggler bg-light text-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <button className="navbar-toggler bg-light text-dark mx-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     Topics
                     </button>
                 </div>

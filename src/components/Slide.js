@@ -6,7 +6,7 @@ function Slide(props) {
     let {event ,start ,end ,host} = props;
     return (
     <>
-        <div className='slide container' style={{fontSize:`50px`,fontWeight:`normal`}}>
+        <div className='slide container'>
             <div className='title'>
                 {event}
             </div>

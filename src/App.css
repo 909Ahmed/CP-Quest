@@ -264,7 +264,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  font-size: larger;
+  font-size: 4vw;
   width: 100%;
   color: #fff;
   height: 300px;
@@ -276,9 +276,10 @@
 }
 
 .wel{
-  display:flexbox;
+  font-size: clamp(10px, 7vw, 50px);
   text-align: center;
-  padding-top:90px;
+  align-self: center
+  /* padding-top:90px; */
   /* padding-bottom: 20vh; */
 }
 
@@ -333,6 +334,7 @@
   border: solid 2px green;
   height: 200px;
   padding:0px;
+  display: flex;
   margin-top: 56px;
   background-image: url("https://getwallpapers.com/wallpaper/full/e/1/7/15354.jpg");
   background-repeat: no-repeat;
@@ -418,4 +420,8 @@
   position: fixed;
   right: 5%;
   bottom: 5%;
+}
+
+.what{
+  padding: 0;
 }
