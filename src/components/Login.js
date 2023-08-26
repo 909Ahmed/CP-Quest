@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 const Login = () => {
 
@@ -17,7 +18,7 @@ const Login = () => {
         });
         const json = await response.json()
         if (json.success){
-            localStorage.setItem('token', json.authToken); 
+            Cookies.set('auth-token', json.authToken, { expires: 7 }); 
             navigate('/') 
         }
         else{
