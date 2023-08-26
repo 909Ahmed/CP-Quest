@@ -1,7 +1,7 @@
 import React, { useContext ,useEffect ,useState } from 'react'
 import saveContext from '../context/questions/savecontext'
 import { useNavigate } from 'react-router-dom';
-
+import Cookies from 'js-cookie';
 
 function Questions(props) {
 
@@ -15,7 +15,7 @@ function Questions(props) {
     const url =`https://codeforces.com/problemset/problem/${contestId}/${index}`
 
     const addCheck = () =>{
-        if(localStorage.getItem('token')){
+        if(Cookies.get('auth-token')){
             addquest(contestId ,index ,name ,rating ,tags)
         }else{
             navigate('/login');
@@ -23,7 +23,7 @@ function Questions(props) {
     }
 
     const solveCheck = () =>{
-        if(localStorage.getItem('token')){
+        if(Cookies.get('auth-token')){
             solvequest(name)
         }else{
             navigate('/login');
@@ -31,7 +31,7 @@ function Questions(props) {
     }
 
     const isSolved = async () =>{
-        if (localStorage.getItem('token')){
+        if (Cookies.get('auth-token')){
         let solvedProb =await solved();
         let result = false;
         if(solvedProb!==undefined){
