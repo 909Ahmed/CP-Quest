@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import saveContext from '../context/questions/savecontext'
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function Account() {
 
@@ -18,7 +19,7 @@ function Account() {
     }
 
     useEffect(() => {
-        if(localStorage.getItem('token')){
+        if(Cookies.get('auth-token')){
             firstTime();
         }else{
             navigate('/login');
