@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import saveContext from "./savecontext";
+import Cookies from 'js-cookie';
 
 
 function SaveState(props) {
@@ -14,7 +15,7 @@ function SaveState(props) {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem('token')
+          "auth-token": Cookies.get('auth-token')
         }
       });
       const json = await response.json();
@@ -26,7 +27,7 @@ function SaveState(props) {
       const response = await fetch(`${host}/api/auth/solvequest`, {
         method: "POST",
         headers: {
-          "auth-token": localStorage.getItem('token'),
+          "auth-token": Cookies.get('auth-token'),
           "Content-Type": "application/json",
         }, body : JSON.stringify({name})
       });
@@ -46,7 +47,7 @@ function SaveState(props) {
         const response = await fetch(`${host}/api/auth/Userdet`, {
           method: "POST",
           headers: {
-            "auth-token": localStorage.getItem('token'),
+            "auth-token": Cookies.get('auth-token'),
           },
         });
         const json = await response.json();
@@ -57,7 +58,7 @@ function SaveState(props) {
       const response = await fetch(`${host}/api/auth/Userdet`, {
         method: "POST",
         headers: {
-          "auth-token": localStorage.getItem('token'),
+          "auth-token": Cookies.get('auth-token'),
         },
       });
       const json = await response.json();
@@ -69,7 +70,7 @@ function SaveState(props) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "auth-token": localStorage.getItem('token')
+            "auth-token": Cookies.get('auth-token')
           }, body: JSON.stringify({contestId ,index ,name ,rating ,tags})
         });
         const json = await response.json();
@@ -81,7 +82,7 @@ function SaveState(props) {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
-            "auth-token": localStorage.getItem('token')
+            "auth-token": Cookies.get('auth-token')
           }
         });
         // eslint-disable-next-line
