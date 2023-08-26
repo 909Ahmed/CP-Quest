@@ -1,6 +1,7 @@
 import React , { useRef } from 'react'
 import {Link} from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import Cookies from 'js-cookie';
 
 function Navbar() {
     const location =useLocation();
@@ -12,7 +13,7 @@ function Navbar() {
     }
 
     const logout = () => {
-        localStorage.removeItem('token');
+        Cookies.remove('auth-token')
     }
 
   return (
@@ -35,9 +36,9 @@ function Navbar() {
                         <li><Link className="dropdown-item" to="/saved">Bookmarks</Link></li>
                         <li><Link className="dropdown-item" to="/login">Login</Link></li>
                         <li><Link className="dropdown-item" to="/problems">Problemset</Link></li>
-                        {localStorage.getItem('token') &&
+                        {Cookies.get('auth-token') &&
                         <li><hr className="dropdown-divider"/></li>}
-                        {localStorage.getItem('token') && 
+                        {Cookies.get('auth-token') && 
                         <li><Link className="dropdown-item" onClick={logout} to="/login">Logout</Link></li>}
                     </ul>
                 </div>
